@@ -5,8 +5,8 @@ date: "5 december 2016"
 output: html_document
 ---
 
-```{r setup, include=TRUE}
-knitr::opts_chunk$set(echo = TRUE, fig.keep = TRUE)
+```{r setup, self_contained: no, include=TRUE}
+knitr::opts_chunk$set(echo = TRUE, fig.keep = TRUE, dev=c('png','postscript'))
 ```
 ##This document contains the assignment for the 1st Peer Assesment Project in Reproducible Research course in  Coursera Data Science Specialization.
 
