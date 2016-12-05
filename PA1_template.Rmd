@@ -5,8 +5,8 @@ date: "5 december 2016"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```{r setup, include=TRUE}
+knitr::opts_chunk$set(echo = TRUE, fig.keep = TRUE)
 ```
 ##This document contains the assignment for the 1st Peer Assesment Project in Reproducible Research course in  Coursera Data Science Specialization.
 
@@ -216,9 +216,4 @@ plot(StepsPerIntervalWeekend$interval,StepsPerIntervalWeekend$steps, type="l", x
 
 
 **As seen from the plots the activity during weekdays and weekends differs, as expected. Overall during the weekends the activity starts later, is lower but more persistant throu out all time intervals. It aso finishes slightly later than during the weekdays.**
-&nbsp;
-&nbsp;
-&nbsp;
-
-
 
