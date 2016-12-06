@@ -6,7 +6,7 @@ output: html_document
 ---
 
 ```{r setup, self_contained: no, include=TRUE}
-knitr::opts_chunk$set(echo = TRUE, fig.keep = TRUE, dev=c('png','postscript'))
+knitr::opts_chunk$set(echo = TRUE, fig.path = "FIGURES_figs/figure-", dev=c('png'))
 ```
 ##This document contains the assignment for the 1st Peer Assesment Project in Reproducible Research course in  Coursera Data Science Specialization.
 
@@ -80,8 +80,8 @@ StepsPerDay <- aggregate(steps ~ date, datanoNA, sum)
 
 Plotting the sum of steps per day:
 
-```{r}
-plot(StepsPerDay$date, StepsPerDay$steps, type = "h", main = paste("Total Steps Per Day"), col="grey", lwd = 8, xlab="Day", ylab="Number of steps")
+```{r Total steps per day}
+plot(StepsPerDay$date, StepsPerDay$steps, type = "h", main = "Total Steps Per Day", col="grey", lwd = 8, xlab="Day", ylab="Number of steps")
 ```
 &nbsp;
 
@@ -108,7 +108,7 @@ StepsPerInterval <- aggregate(steps ~ interval, datanoNA, mean)
 
 Plotting the sum of steps per interval
 
-```{r plot the above}
+```{r Mean steps per interval}
 plot(StepsPerInterval$interval,StepsPerInterval$steps, type="l", xlab="Interval", ylab="Number of Steps",main="Average Number of Steps per Interval")
 ```
 &nbsp;
@@ -164,8 +164,8 @@ StepsPerDayNEW <- aggregate(steps.x ~ date, dataNEW, sum)
 
 Plotting the sum of steps per day with replaced missing values:
 
-```{r plot for dataNEW}
-plot(StepsPerDayNEW$date, StepsPerDayNEW$steps.x, type = "h", main = paste("Total Steps Each Day"), col="grey", lwd = 8, xlab="Day", ylab="Number of steps")
+```{r Total steps per day with missing values}
+plot(StepsPerDayNEW$date, StepsPerDayNEW$steps.x, type = "h", main = "Total Steps Each Day", col="grey", lwd = 8, xlab="Day", ylab="Number of steps")
 ```
 &nbsp;
 
@@ -200,7 +200,7 @@ dataReplaced$day <- as.factor(sapply(dataReplaced$date, day_of_week))
 
 Comparing graphically the activity during weekdays and weekends:
 
-```{r}
+```{r Comparison of Activity Weekdays and Weekends}
 dataReplacedWeekday <- dataReplaced[which(dataReplaced$day == "weekday"),]
 dataReplacedWeekend <- dataReplaced[which(dataReplaced$day == "weekend"),]                                   
 
